@@ -1,0 +1,16 @@
+﻿@using Sitecore.Mvc
+@model Sitecore.Mvc.Presentation.RenderingModel
+
+@if (Model != null && Model.Item != null)
+{
+
+    <div id="HeaderTopBar">
+        <div class="HeaderTopBar is-blue">
+            <a href="#">
+                <div class="HeaderTopBar-image" style="background-image: url('~/img/blue-header.jpg')">
+                    <h2>@Html.Sitecore().Field("PromoTitle", Model.Item)</h2>
+                </div>
+            </a>
+        </div>
+    </div>
+}

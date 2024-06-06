@@ -1,0 +1,54 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using SiteCoreAssignment.Models
+@model CarouselModel
+
+@if (Model != null && Model.Slides != null && Model.Slides.Count > 0)
+{
+    <!-- Carousel Start -->
+    <div class="container-fluid p-0 mb-5">
+        <div id="header-carousel" class="carousel slide carousel-fade" data-ride="carousel">
+            <ol class="carousel-indicators">
+                @for (int i = 0; i < Model.Slides.Count; i++)
+                {
+                    if (i == 0)
+                    {
+                        <li data-target="#header-carousel" data-slide-to="@i" class="active"></li>
+                    }
+                    else
+                    {
+                        <li data-target="#header-carousel" data-slide-to="@i"></li>
+                    }
+
+                }
+                @*<li data-target="#header-carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#header-carousel" data-slide-to="1"></li>
+                    <li data-target="#header-carousel" data-slide-to="2"></li>*@
+            </ol>
+            <div class="carousel-inner">
+                @{
+                    int count = 0;
+                }
+                @foreach (var slide in Model.Slides)
+                {
+                    var activeclass = count == 0 ? "active" : string.Empty;
+                    <div class="carousel-item @activeclass">
+                        @*<img class="img-fluid" src="~/img/carousel-1.jpg" alt="Image">*@
+                        @slide.Image
+                        <div class="carousel-caption d-flex align-items-center justify-content-center">
+                            <div class="p-5" style="width: 100%; max-width: 900px;">
+                                <h5 class="text-white text-uppercase mb-md-3">@slide.Title</h5>
+                                <h1 class="display-3 text-white mb-md-4">@slide.SubTitle</h1>
+                                @slide.CallToAction
+                                @*<a href="" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Learn More</a>*@
+                            </div>
+                        </div>
+                    </div>
+                    count++;
+                }
+
+            </div>
+        </div>
+    </div>
+    <!-- Carousel End -->
+}

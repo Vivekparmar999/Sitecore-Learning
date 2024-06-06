@@ -1,0 +1,24 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using SiteCoreAssignment.Models
+@model HeroViewModel
+
+
+@if (Model != null && Model.Item != null)
+{
+    <!-- Page Header Start -->
+<div class="container-fluid page-header d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5 mb-5">
+    <h1 class="display-4 text-white mb-3 mt-0 mt-lg-5">@Html.Sitecore().Field("Title", Model.Item)</h1>
+    <div class="d-inline-flex text-white">
+        <p class="m-0"><a class="text-white" href="/">Home</a></p>
+        <p class="m-0 px-2">/</p>
+        <p class="m-0"><a class="text-white" href="/about-us">@Html.Sitecore().Field("Title", Model.Item)</a></p>
+    </div>
+    <p class="mt-2 justify-content-center text-white">@Html.Sitecore().Field("SubTitle", Model.Item)</p>
+
+    @Html.Sitecore().Field("LearnMore", new { @class = "btn btn-primary py-md-2 px-md-4 font-weight-semi-bold" })
+    
+
+</div>
+    <!-- Page Header Start -->
+}

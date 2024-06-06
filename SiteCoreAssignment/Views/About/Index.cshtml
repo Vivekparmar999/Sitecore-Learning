@@ -1,0 +1,21 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using SiteCoreAssignment.Models
+@model AboutViewModel
+
+@if (Model != null && Model.Item != null)
+{
+    <div class="row align-items-center pb-1">
+        <div class="col-lg-5">
+            @Html.Sitecore().Field("Image",Model.Item,new { @class= "img-thumbnail p-3" })
+        </div>
+        <div class="col-lg-7 mt-5 mt-lg-0">
+            <small class="bg-primary text-white text-uppercase font-weight-bold px-1">@Html.Sitecore().Field("Title", Model.Item)</small>
+            <h1 class="mt-2 mb-4">@Html.Sitecore().Field("Sub_Title", Model.Item)</h1>
+            <p class="mb-4">@Html.Sitecore().Field("Description", Model.Item)</p>
+
+            @Html.Sitecore().Field("Call_To_Action", new { @class = "btn btn-primary py-md-2 px-md-4 font-weight-semi-bold" })
+@*            <a href="" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold">Read More</a>*@
+        </div>
+    </div>
+}
