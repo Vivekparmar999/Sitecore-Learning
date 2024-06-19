@@ -1,0 +1,18 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using SiteCoreAssignment.Controllers
+@model HeroBannerSearchList
+
+<div style="margin-top:100px;">
+    @if (Model != null && Model.HeroBannerList.Count > 0)
+    {
+        foreach (var hero in Model.HeroBannerList)
+        {
+            <h1>@hero.Title</h1>
+        }
+    }
+    else
+    {
+        <h1>No Content</h1>
+    }
+</div>

@@ -30,18 +30,22 @@ namespace SiteCoreAssignment.Controllers
                 foreach (var slideItem in slideItems)
                 {
                     //Title
+                    //Non-Editable in EE
                     var titleField = slideItem.Fields["Title"];
                     var title = titleField?.Value;
 
                     //Sub Title
+                    //Editable in EE
                     var subTitle = new MvcHtmlString(FieldRenderer.Render
                         (slideItem, "Sub_Title"));
 
                     //Image
+                    //Non-Editable in EE
                     var image = new MvcHtmlString(FieldRenderer.Render
                         (slideItem, "Image", "class=img-fluid"));
 
                     //Call to action
+                    //Editable in EE
                     var callToAction = new MvcHtmlString(FieldRenderer.Render
                         (slideItem, "Call_To_Action"
                        , "class=btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2"));

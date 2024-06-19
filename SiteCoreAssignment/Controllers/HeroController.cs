@@ -12,6 +12,7 @@ namespace SiteCoreAssignment.Controllers
     public class HeroController : Controller
     {
         // GET: Hero
+        //Not Added Rendering - Added HeroBanner Rendering
         public ActionResult Index()
         {
 

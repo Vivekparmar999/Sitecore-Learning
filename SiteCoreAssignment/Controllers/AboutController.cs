@@ -11,6 +11,7 @@ namespace SiteCoreAssignment.Controllers
     public class AboutController : Controller
     {
         // GET: About
+        //All fields are EE Editable because in view, we are using - @Html.Sitecore().Field
         public ActionResult Index()
         {
             var datasourceItem = RenderingContext.Current?.Rendering.Item;

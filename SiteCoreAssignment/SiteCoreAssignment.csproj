@@ -44,6 +44,15 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Sitecore.ContentSearch, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore.ContentSearch.10.0.1\lib\net48\Sitecore.ContentSearch.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ContentSearch.Data, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore.ContentSearch.Data.10.0.1\lib\net48\Sitecore.ContentSearch.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ContentSearch.Linq, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore.ContentSearch.Linq.10.0.1\lib\net48\Sitecore.ContentSearch.Linq.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Kernel, Version=15.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Sitecore.Kernel.10.0.1\lib\net48\Sitecore.Kernel.dll</HintPath>
     </Reference>
@@ -253,8 +262,6 @@
     <Content Include="Views\Blog.cshtml" />
     <Content Include="Views\Contact.cshtml" />
     <Content Include="Views\Pricing.cshtml" />
-    <Content Include="Views\Service.cshtml" />
-    <Content Include="Views\Single.cshtml" />
     <Content Include="Views\About\Index.cshtml" />
     <Content Include="Views\Carousel\Index.cshtml" />
     <Content Include="Views\Shared\_Navbar.cshtml" />
@@ -263,12 +270,14 @@
     <Content Include="Views\PromoOffer\PromoOffer.cshtml" />
     <Content Include="Views\Hero\Index.cshtml" />
     <Content Include="Views\Layout\MainLayout.cshtml" />
+    <Content Include="Views\HeroSearch\Index.cshtml" />
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\CarouselController.cs" />
+    <Compile Include="Controllers\HeroSearchController.cs" />
     <Compile Include="Controllers\HeroController.cs" />
     <Compile Include="Controllers\SampleController.cs" />
     <Compile Include="Helper\GetLinkFieldValue.cs" />
